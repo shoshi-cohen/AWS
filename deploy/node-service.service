@@ -1,0 +1,13 @@
+[Unit]
+Description=Event Management Node Backend
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/ubuntu/AWS/Node/event-management/app.js
+WorkingDirectory=/home/ubuntu/AWS/Node/event-management
+Restart=always
+Environment=PORT=4000
+Environment=MONGODB_URI=REPLACE_WITH_YOUR_MONGODB_ATLAS_URI
+
+[Install]
+WantedBy=multi-user.target

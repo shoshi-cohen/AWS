@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Producer } from "../types/producer";
+import { API_BASE } from "../config";
 
 interface AddProducerProps {
     addProducer: (producer: Producer) => void;
@@ -15,7 +16,7 @@ const AddProducer: React.FC<AddProducerProps> = ({ addProducer }) => {
         const newProducer: Producer = { id: 0, name, email, phone }; 
         console.log('Sending producer:', newProducer);
         try {
-            const response = await fetch('http://localhost:5000/producers', {
+            const response = await fetch(`${API_BASE}/producers`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

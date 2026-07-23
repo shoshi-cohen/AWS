@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE } from '../config';
 
 interface Producer {
     id: number;
@@ -15,7 +16,7 @@ const ProducerList: React.FC = () => {
     useEffect(() => {
         const fetchProducers = async () => {
             try {
-                const response = await fetch('http://localhost:5000/producers');
+                const response = await fetch(`${API_BASE}/producers`);
                 const data = await response.json();
                 setProducers(data);
             } catch (error) {
