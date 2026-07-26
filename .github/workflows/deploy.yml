@@ -27,7 +27,7 @@ jobs:
             cd ~/AWS/Riact/event-management
             npm ci
             npm run build
-            rm -rf /var/www/html/*
-            cp -r dist/* /var/www/html/
+            sudo rm -rf /var/www/html/*
+            sudo cp -r dist/* /var/www/html/
 
             sudo systemctl reload nginx
